@@ -34,6 +34,6 @@ export const calc = () => {
             Let's try again, ${userNameThis}!`);
             acc = 0;
         }
-    }
+    };
     c();
 };
