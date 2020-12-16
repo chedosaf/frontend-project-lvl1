@@ -21,8 +21,8 @@ export const gcd = () => {
             console.log(`Congratulations, ${userNameEven}!`);
             return;
         };
-        const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0) ;
-        const number2 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0) ;
+        const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0);
+        const number2 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0);
         console.log(`Question: ${number1} ${number2}`);
         let answer = readlineSync.question('Your answer: ');
         const trueAnswer = nod(number1, number2);

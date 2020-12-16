@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { answersToWin, maxRandomNumder } from '../src/index.js';;
+import { answersToWin, maxRandomNumder } from '../src/index.js';
 
 export const isEven = () => {
     let userNameThis = '';
