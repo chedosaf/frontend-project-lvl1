@@ -16,9 +16,7 @@ export const isPrime = () => {
             console.log(`Congratulations, ${userNameThis}!`);
             return;
         };
-        const min = Math.ceil(1);
-        const max = Math.floor(maxRandomNumder);
-        const randomInt = Math.floor(Math.random() * (max - min)) + min;
+        const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(1))) + Math.ceil(1);
         let trueAnswer = 'yes';
         for(let i = 2; i <= randomInt - 1; i++) {
             if (randomInt % i === 0 ) {

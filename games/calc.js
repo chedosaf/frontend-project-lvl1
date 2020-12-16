@@ -17,11 +17,9 @@ export const calc = () => {
             return;
         };
         const operatinsMass = ['-', '+', '*'];
-        const min = Math.ceil(0);
-        const max = Math.floor(maxRandomNumder);
-        const number1 = Math.floor(Math.random() * (max - min)) + min ;
-        const number2 = Math.floor(Math.random() * (max - min)) + min ;
-        const operation = operatinsMass[Math.floor(Math.random() * (Math.floor(3) - min)) + min];
+        const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0) ;
+        const number2 = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(0))) + Math.ceil(0) ;
+        const operation = operatinsMass[Math.floor(Math.random() * (Math.floor(3) - Math.ceil(0))) + Math.ceil(0)];
         console.log(`Question: ${number1} ${operation} ${number2}`);
         let answer = readlineSync.question('Your answer: ');
         const trueAnswer = eval(`${number1} ${operation} ${number2}`);

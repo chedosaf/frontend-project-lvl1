@@ -5,7 +5,7 @@
 
 <a href="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"><img src="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"/></a><br>
 
-<a href="https://asciinema.org/a/erazay6sZVFGUb2EZeNRj4FLR"/> <br>
+https://asciinema.org/a/erazay6sZVFGUb2EZeNRj4FLR <br>
 https://asciinema.org/a/Kh2w544CDq5SMp2em9WRG6Uiu <br>
 https://asciinema.org/a/PJinzqSrCtS8AmyFV0fVKMV3K <br>
 https://asciinema.org/a/7kaXPtOtp1WJrq0PYqigLLfD2 <br>
