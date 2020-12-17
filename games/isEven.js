@@ -1,17 +1,11 @@
 import readlineSync from 'readline-sync';
-import { answersToWin, maxRandomNumder } from '../src/index.js';
+import { answersToWin, maxRandomNumder, askName, userNameThis } from '../src/index.js';
 
 export const isEven = () => {
-    let userNameThis = '';
-    const askName = () => {
-        let userName = readlineSync.question('May I have your name? ');
-        console.log('Hi ' + userName + '!');
-        userNameThis = userName;
-    };
     askName();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     let acc = 0;
-    const q = () => {
+    const e = () => {
         if (acc > answersToWin - 1) {
             console.log(`Congratulations, ${userNameThis}!`);
             return;
@@ -22,7 +16,7 @@ export const isEven = () => {
         if ((randomInt % 2 === 0 && answer === 'yes') || (randomInt % 2 === 1 && answer === 'no')) {
          console.log('Correct!');
          acc += 1;
-            q();
+            e();
         } else if (randomInt % 2 === 1 && answer !== 'no') { 
             console.log(`${answer} is wrong answer ;(. Correct answer was 'no'.
             Let's try again, ${userNameThis}!`);
@@ -30,8 +24,8 @@ export const isEven = () => {
         } else if (randomInt % 2 === 0 && answer !== 'yes') { 
             console.log(`'${answer}' is wrong answer ;(. Correct answer was 'yes'.
             Let's try again, ${userNameThis}!`);
-            acc = 0;
         }
     };
-    q();
+    e();
 };
+

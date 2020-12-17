@@ -1,16 +1,9 @@
 import readlineSync from 'readline-sync';
-import { answersToWin, maxRandomNumder } from '../src/index.js';
+import { answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc } from '../src/index.js';
 
 export const progression = () => {
-    let userNameThis = '';
-    const askName = () => {
-        let userName = readlineSync.question('May I have your name? ');
-        console.log('Hi ' + userName + '!');
-        userNameThis = userName;
-    };
     askName();
     console.log('What number is missing in the progression?');
-    let acc = 0;
     const p = () => {
         if (acc > answersToWin - 1) {
             console.log(`Congratulations, ${userNameThis}`);
@@ -29,15 +22,7 @@ export const progression = () => {
         mass[randomMassItem] = '..';
         console.log(`Question: ${mass}`);
         let answer = readlineSync.question('Your answer: ');
-        if (answer == trueAnswer) {
-            console.log('Correct!');
-            acc += 1;
-               p();
-           } else { 
-               console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
-               Let's try again, ${userNameThis}!`);
-               acc = 0;
-        }
+        winLoose(answer, trueAnswer, p);
     }
     p();
 };
