@@ -3,7 +3,7 @@
 
 
 plugins:
-  - 'airbnb-base'
+  - airbnb-base
 
 env:
   node: true
