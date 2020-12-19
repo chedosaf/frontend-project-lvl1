@@ -23,6 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+      - name: Install lint
+        run: make install eslint
       
       - name: Run eslint
         run: make lint
