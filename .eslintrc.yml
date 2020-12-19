@@ -4,6 +4,8 @@
 plugins:
 
 # https://eslint.org/docs/user-guide/configuring#specifying-environments
+- eslint
+
 env:
   node: true
   es2020: true
