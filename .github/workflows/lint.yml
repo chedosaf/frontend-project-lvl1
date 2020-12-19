@@ -31,5 +31,5 @@ jobs:
         run: npx eslint --init
       
       - name: Run eslint
-        run: npx eslint games
+        run: npx eslint .
         
