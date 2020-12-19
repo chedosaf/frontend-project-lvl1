@@ -5,6 +5,9 @@
 
 <a href="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"><img src="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"/></a><br>
 
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/chedosaf/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chedosaf/frontend-project-lvl1/actions)
+
 https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd
 
 https://asciinema.org/a/akfoQDf3l7LUz1Vt4PWEXtxvP
