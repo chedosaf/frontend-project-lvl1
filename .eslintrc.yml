@@ -1,5 +1,10 @@
 
 ---
+
+plugins:
+ - 'airbnb-base'
+
+# https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   node: true
   es2020: true
