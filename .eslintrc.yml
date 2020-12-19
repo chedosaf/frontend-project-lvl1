@@ -1,9 +1,10 @@
 
 ---
 
-plugins:
- - 'airbnb-base'
-
+plugins: [
+        "plugin1",
+        "eslint-plugin-plugin2"
+    ]
 # https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
   node: true
