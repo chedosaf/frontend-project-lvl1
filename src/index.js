@@ -15,7 +15,7 @@ const askName = () => {
 let acc = 0;
 
 const winLoose = (answer, trueAnswer, p) => {
-  if (answer === trueAnswer) {
+  if (answer == trueAnswer) {
     console.log('Correct!');
     acc += 1;
     p();
