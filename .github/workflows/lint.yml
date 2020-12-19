@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install lint
-        run: npm install eslint
+        run: npm install
       
       - name: Run eslint
         run: make lint
