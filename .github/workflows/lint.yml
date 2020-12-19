@@ -24,13 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      # Install and build project
-      - name: npm install, build
-        run: make install
-
-      - name: Install linter
-        run: npx lint .
-      
       - name: Run eslint
         run: npx eslint .
         
