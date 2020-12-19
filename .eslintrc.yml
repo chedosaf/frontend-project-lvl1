@@ -3,8 +3,8 @@
 
 
 plugins:
-  - eslint-plugin-airbnb-base
-  
+  - 'eslint-plugin-airbnb-base'
+
 env:
   node: true
   es2020: true
