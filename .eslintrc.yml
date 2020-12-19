@@ -1,10 +1,5 @@
 
 ---
-
-plugins:
-  - plugin1
-  - eslint-plugin-plugin2
-
 env:
   node: true
   es2020: true
