@@ -26,4 +26,7 @@ jobs:
       
       - name: Run eslint
         run: npx eslint .
+      
+      - name: Run eslint
+        run: npx eslint frontend-project-lvl1
         
