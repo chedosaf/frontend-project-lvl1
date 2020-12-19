@@ -3,7 +3,7 @@
 
 
 plugins:
-  - 'eslint-config-airbnb-base'
+  - 'airbnb-base'
 
 env:
   node: true
