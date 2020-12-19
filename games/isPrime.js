@@ -12,10 +12,11 @@ const isPrime = () => {
       console.log(`Congratulations, ${userNameThis}!`);
       return;
     }
-    const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder) - Math.ceil(1))) + Math.ceil(1);
+    const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
+     - Math.ceil(1))) + Math.ceil(1);
     let trueAnswer = 'yes';
-    for (let i = 2; i <= randomInt - 1; i++) {
-      if (randomInt % i === 0 ) {
+    for (let i = 2; i <= randomInt - 1; i += 1) {
+      if (randomInt % i === 0) {
         trueAnswer = 'no';
       }
     }
