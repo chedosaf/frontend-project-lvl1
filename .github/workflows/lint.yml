@@ -25,4 +25,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run linter
-        run: npx lint --init
+        run: npx eslint frontend-project-lvl1
