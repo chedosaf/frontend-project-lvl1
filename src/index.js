@@ -8,7 +8,7 @@ let userNameThis = '';
 
 const askName = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log('Hi ' + userName + '!');
+  console.log(`Hi ${userName}!`);
   userNameThis = userName;
 };
 
