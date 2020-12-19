@@ -26,9 +26,6 @@ jobs:
 
       - name: Install linter
         run: npx lint .
-        
-      - name: Init eslint
-        run: npx eslint --init
       
       - name: Run eslint
         run: npx eslint .
