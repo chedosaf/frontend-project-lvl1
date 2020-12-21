@@ -13,8 +13,8 @@ const gcd = () => {
     return nod(b, a % b);
   };
   const g = () => {
-    if (acc > answersToWin - 1) {
-      console.log(`Congratulations, ${userNameThis}!`);
+    if (acc[0] > answersToWin - 1) {
+      console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
     const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder)

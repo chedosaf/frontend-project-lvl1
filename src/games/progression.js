@@ -8,8 +8,8 @@ const progression = () => {
   askName();
   console.log('What number is missing in the progression?');
   const p = () => {
-    if (acc > answersToWin - 1) {
-      console.log(`Congratulations, ${userNameThis}`);
+    if (acc[0] > answersToWin - 1) {
+      console.log(`Congratulations, ${userNameThis[0]}`);
       return;
     }
     const mass = [];

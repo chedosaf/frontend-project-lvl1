@@ -8,8 +8,8 @@ const calc = () => {
   askName();
   console.log('What is the result of the expression?');
   const c = () => {
-    if (acc > answersToWin - 1) {
-      console.log(`Congratulations, ${userNameThis}!`);
+    if (acc[0] > answersToWin - 1) {
+      console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
     const operatinsMass = ['-', '+', '*'];
@@ -21,7 +21,14 @@ const calc = () => {
      - Math.ceil(0))) + Math.ceil(0)];
     console.log(`Question: ${number1} ${operation} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
-    const trueAnswer = eval(`${number1} ${operation} ${number2}`);
+    let trueAnswer = '';
+    if (operation === '-') {
+      trueAnswer = number1 - number2;
+    } else if (operation === '+') {
+      trueAnswer = number1 + number2;
+    } else {
+      trueAnswer = number1 * number2;
+    }
     winLoose(answer, trueAnswer, c);
   };
   c();

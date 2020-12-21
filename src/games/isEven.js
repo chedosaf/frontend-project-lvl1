@@ -10,7 +10,7 @@ const isEven = () => {
   let acc = 0;
   const e = () => {
     if (acc > answersToWin - 1) {
-      console.log(`Congratulations, ${userNameThis}!`);
+      console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
     const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
