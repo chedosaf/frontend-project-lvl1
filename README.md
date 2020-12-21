@@ -8,7 +8,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/chedosaf/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chedosaf/frontend-project-lvl1/actions)<br>
 
-<a href="https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd"><img src="https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd"/></a><br>
+[![asciicast](https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd.svg)](https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd)
 
 https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd
 
