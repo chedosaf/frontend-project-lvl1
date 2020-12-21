@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 import {
   answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc,
-} from '../src/index.js';
+} from '../index.js';
 
 const progression = () => {
   askName();

@@ -6,7 +6,10 @@
 <a href="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"><img src="https://github.com/chedosaf/frontend-project-lvl1/workflows/lint/badge.svg"/></a><br>
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/chedosaf/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/chedosaf/frontend-project-lvl1/actions)<br>
+[![Actions Status](https://github.com/chedosaf/frontend-project-lvl1/workflows/hexlet-check/badge.svg)]
+(https://github.com/chedosaf/frontend-project-lvl1/actions)<br>
+
+<a href="https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd"><video src="https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd"/></a><br>
 
 https://asciinema.org/a/deT0RSXBi9VE1a6WDTvoPtYcd
 
