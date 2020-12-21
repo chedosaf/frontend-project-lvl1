@@ -12,6 +12,12 @@ const askName = () => {
   userNameThis.push(userName);
 };
 
+const randomizer = (min, max) => {
+  const n = Math.floor(Math.random() * (Math.floor(max)
+  - Math.ceil(min))) + Math.ceil(min);
+  return n;
+};
+
 const acc = [0];
 
 const winLoose = (answer, trueAnswer, p) => {
@@ -26,5 +32,5 @@ const winLoose = (answer, trueAnswer, p) => {
 };
 
 export {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc,
+  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
 };

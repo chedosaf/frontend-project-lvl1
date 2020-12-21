@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc,
+  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
 } from '../index.js';
 
 const calc = () => {
@@ -13,12 +13,9 @@ const calc = () => {
       return;
     }
     const operatinsMass = ['-', '+', '*'];
-    const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(0))) + Math.ceil(0);
-    const number2 = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(0))) + Math.ceil(0);
-    const operation = operatinsMass[Math.floor(Math.random() * (Math.floor(3)
-     - Math.ceil(0))) + Math.ceil(0)];
+    const number1 = randomizer(0, maxRandomNumder);
+    const number2 = randomizer(0, maxRandomNumder);
+    const operation = operatinsMass[randomizer(0, 3)];
     console.log(`Question: ${number1} ${operation} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     let trueAnswer = '';

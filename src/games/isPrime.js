@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis,
+  answersToWin, maxRandomNumder, askName, userNameThis, randomizer,
 } from '../index.js';
 
 const isPrime = () => {
@@ -13,8 +13,7 @@ const isPrime = () => {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
-    const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(1))) + Math.ceil(1);
+    const randomInt = randomizer(1, maxRandomNumder);
     let trueAnswer = 'yes';
     for (let i = 2; i <= randomInt - 1; i += 1) {
       if (randomInt % i === 0) {

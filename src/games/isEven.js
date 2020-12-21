@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis,
+  answersToWin, maxRandomNumder, askName, userNameThis, randomizer,
 } from '../index.js';
 
 const isEven = () => {
@@ -13,8 +13,7 @@ const isEven = () => {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
-    const randomInt = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(1))) + Math.ceil(1);
+    const randomInt = randomizer(1, maxRandomNumder);
     console.log(`Question: ${randomInt}`);
     const answer = readlineSync.question('Your answer: ');
     if ((randomInt % 2 === 0 && answer === 'yes') || (randomInt % 2 === 1 && answer === 'no')) {

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc,
+  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
 } from '../index.js';
 
 const progression = () => {
@@ -13,13 +13,10 @@ const progression = () => {
       return;
     }
     const mass = [];
-    const massLength = Math.floor(Math.random() * (Math.floor(11) - Math.ceil(5))) + Math.ceil(5);
-    let randomNumber = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(0))) + Math.ceil(0);
-    const randomIncrease = Math.floor(Math.random() * (Math.floor(30)
-     - Math.ceil(0))) + Math.ceil(0);
-    const randomMassItem = Math.floor(Math.random() * (Math.floor(massLength)
-     - Math.ceil(0))) + Math.ceil(0);
+    const massLength = randomizer(5, 11);
+    let randomNumber = randomizer(0, maxRandomNumder);
+    const randomIncrease = randomizer(0, 30);
+    const randomMassItem = randomizer(0, massLength);
     for (let i = 0; mass.length < massLength; i += 1) {
       randomNumber += randomIncrease;
       mass.push(randomNumber);

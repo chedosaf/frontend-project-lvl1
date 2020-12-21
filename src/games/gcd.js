@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc,
+  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
 } from '../index.js';
 
 const gcd = () => {
@@ -17,10 +17,8 @@ const gcd = () => {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
-    const number1 = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(0))) + Math.ceil(0);
-    const number2 = Math.floor(Math.random() * (Math.floor(maxRandomNumder)
-     - Math.ceil(0))) + Math.ceil(0);
+    const number1 = randomizer(0, maxRandomNumder);
+    const number2 = randomizer(0, maxRandomNumder);
     console.log(`Question: ${number1} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     const trueAnswer = nod(number1, number2);
