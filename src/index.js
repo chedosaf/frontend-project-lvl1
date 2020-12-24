@@ -1,30 +1,26 @@
 import readlineSync from 'readline-sync';
 
-const answersToWin = 3;
+const rigthAnswerCount = 3;
 
 const maxRandomNumder = 100;
 
-const userNameThis = [];
-
-const askName = () => {
+const askName = (userNameThis) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${userName}!`);
   userNameThis.push(userName);
 };
 
 const randomizer = (min, max) => {
-  const n = Math.floor(Math.random() * (Math.floor(max)
+  const randomNumber = Math.floor(Math.random() * (Math.floor(max)
   - Math.ceil(min))) + Math.ceil(min);
-  return n;
+  return randomNumber;
 };
 
-const acc = [0];
-
-const winLoose = (answer, trueAnswer, p) => {
-  if (Number(answer) === Number(trueAnswer)) {
+const winLooseСompare = (answer, trueAnswer, flowFunction, userNameThis, acc) => {
+  if (String(answer) === String(trueAnswer)) {
     console.log('Correct!');
     acc[0] += 1;
-    p();
+    flowFunction();
   } else {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
     Let's try again, ${userNameThis[0]}!`);
@@ -32,5 +28,5 @@ const winLoose = (answer, trueAnswer, p) => {
 };
 
 export {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
+  rigthAnswerCount, maxRandomNumder, askName, winLooseСompare, randomizer,
 };

@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
+  rigthAnswerCount, maxRandomNumder, askName, winLooseСompare, randomizer,
 } from '../index.js';
 
 const progression = () => {
-  askName();
+  const acc = [0];
+  const userNameThis = [];
+  askName(userNameThis);
   console.log('What number is missing in the progression?');
-  const p = () => {
-    if (acc[0] > answersToWin - 1) {
+  const progressionFlow = () => {
+    if (acc[0] > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userNameThis[0]}`);
       return;
     }
@@ -25,9 +27,9 @@ const progression = () => {
     mass[randomMassItem] = '..';
     console.log(`Question: ${mass}`);
     const answer = readlineSync.question('Your answer: ');
-    winLoose(answer, trueAnswer, p);
+    winLooseСompare(answer, trueAnswer, progressionFlow, userNameThis, acc);
   };
-  p();
+  progressionFlow();
 };
 
 export default progression;

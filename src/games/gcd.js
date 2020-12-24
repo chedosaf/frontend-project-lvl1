@@ -1,19 +1,21 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
+  rigthAnswerCount, maxRandomNumder, askName, winLooseСompare, randomizer,
 } from '../index.js';
 
 const gcd = () => {
-  askName();
+  const acc = [0];
+  const userNameThis = [];
+  askName(userNameThis);
   console.log('Find the greatest common divisor of given numbers.');
   const nod = (a, b) => {
     if (b > a) return nod(b, a);
     if (!b) return a;
     return nod(b, a % b);
   };
-  const g = () => {
-    if (acc[0] > answersToWin - 1) {
+  const gcdFlow = () => {
+    if (acc[0] > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
@@ -22,9 +24,9 @@ const gcd = () => {
     console.log(`Question: ${number1} ${number2}`);
     const answer = readlineSync.question('Your answer: ');
     const trueAnswer = nod(number1, number2);
-    winLoose(answer, trueAnswer, g);
+    winLooseСompare(answer, trueAnswer, gcdFlow, userNameThis, acc);
   };
-  g();
+  gcdFlow();
 };
 
 export default gcd;

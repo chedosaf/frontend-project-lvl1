@@ -1,15 +1,16 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, randomizer,
+  rigthAnswerCount, maxRandomNumder, askName, randomizer, winLooseСompare,
 } from '../index.js';
 
 const isPrime = () => {
-  askName();
+  const acc = [0];
+  const userNameThis = [];
+  askName(userNameThis);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  let acc = 0;
-  const p = () => {
-    if (acc > answersToWin - 1) {
+  const primeFlow = () => {
+    if (acc[0] > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
@@ -22,16 +23,9 @@ const isPrime = () => {
     }
     console.log(`Question: ${randomInt}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === trueAnswer) {
-      console.log('Correct!');
-      acc += 1;
-      p();
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
-      Let's try again, ${userNameThis[0]}!`);
-    }
+    winLooseСompare(answer, trueAnswer, primeFlow, userNameThis, acc);
   };
-  p();
+  primeFlow();
 };
 
 export default isPrime;

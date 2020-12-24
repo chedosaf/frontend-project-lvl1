@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
 
 import {
-  answersToWin, maxRandomNumder, askName, userNameThis, winLoose, acc, randomizer,
+  rigthAnswerCount, maxRandomNumder, askName, winLooseСompare, randomizer,
 } from '../index.js';
 
 const calc = () => {
-  askName();
+  const acc = [0];
+  const userNameThis = [];
+  askName(userNameThis);
   console.log('What is the result of the expression?');
-  const c = () => {
-    if (acc[0] > answersToWin - 1) {
+  const calcFlow = () => {
+    if (acc[0] > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userNameThis[0]}!`);
       return;
     }
@@ -26,9 +28,9 @@ const calc = () => {
     } else {
       trueAnswer = number1 * number2;
     }
-    winLoose(answer, trueAnswer, c);
+    winLooseСompare(answer, trueAnswer, calcFlow, userNameThis, acc);
   };
-  c();
+  calcFlow();
 };
 
 export default calc;
