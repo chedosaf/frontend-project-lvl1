@@ -1,19 +1,12 @@
 import readlineSync from 'readline-sync';
 
 import {
-  rigthAnswerCount, maxRandomNumder, askName, randomizer, winLooseСompare,
+  maxRandomNumder, engine, randomizer,
 } from '../index.js';
 
 const isPrime = () => {
-  const acc = [0];
-  const userNameThis = [];
-  askName(userNameThis);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const primeFlow = () => {
-    if (acc[0] > rigthAnswerCount - 1) {
-      console.log(`Congratulations, ${userNameThis[0]}!`);
-      return;
-    }
     const randomInt = randomizer(1, maxRandomNumder);
     let trueAnswer = 'yes';
     for (let i = 2; i <= randomInt - 1; i += 1) {
@@ -23,9 +16,9 @@ const isPrime = () => {
     }
     console.log(`Question: ${randomInt}`);
     const answer = readlineSync.question('Your answer: ');
-    winLooseСompare(answer, trueAnswer, primeFlow, userNameThis, acc);
+    return [answer, trueAnswer];
   };
-  primeFlow();
+  engine(question, primeFlow);
 };
 
 export default isPrime;

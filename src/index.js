@@ -4,29 +4,40 @@ const rigthAnswerCount = 3;
 
 const maxRandomNumder = 100;
 
-const askName = (userNameThis) => {
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hi ${userName}!`);
-  userNameThis.push(userName);
-};
-
 const randomizer = (min, max) => {
   const randomNumber = Math.floor(Math.random() * (Math.floor(max)
   - Math.ceil(min))) + Math.ceil(min);
   return randomNumber;
 };
 
-const winLooseСompare = (answer, trueAnswer, flowFunction, userNameThis, acc) => {
-  if (String(answer) === String(trueAnswer)) {
-    console.log('Correct!');
-    acc[0] += 1;
-    flowFunction();
-  } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
-    Let's try again, ${userNameThis[0]}!`);
-  }
+const engine = (question, flowFunction) => {
+  let userNameThis = '';
+  let acc = 0;
+  const askName = () => {
+    const userName = readlineSync.question('May I have your name? ');
+    console.log(`Hi ${userName}!`);
+    userNameThis = userName;
+  };
+  askName();
+  console.log(question);
+  const gameEngine = () => {
+    if (acc > rigthAnswerCount - 1) {
+      console.log(`Congratulations, ${userNameThis}!`);
+      return;
+    }
+    const gameAnswers = flowFunction();
+    if (String(gameAnswers[0]) === String(gameAnswers[1])) {
+      console.log('Correct!');
+      acc += 1;
+      gameEngine();
+    } else {
+      console.log(`'${gameAnswers[0]}' is wrong answer ;(. Correct answer was '${gameAnswers[1]}'.
+      Let's try again, ${userNameThis}!`);
+    }
+  };
+  gameEngine();
 };
 
 export {
-  rigthAnswerCount, maxRandomNumder, askName, winLooseСompare, randomizer,
+  maxRandomNumder, engine, randomizer,
 };
