@@ -20,7 +20,7 @@ const engine = (question, flowFunction) => {
   };
   askName();
   console.log(question);
-  const gameEngine = () => {
+  const gameResultsСompare = () => {
     if (acc > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userNameThis}!`);
       return;
@@ -29,13 +29,13 @@ const engine = (question, flowFunction) => {
     if (String(gameAnswers[0]) === String(gameAnswers[1])) {
       console.log('Correct!');
       acc += 1;
-      gameEngine();
+      gameResultsСompare();
     } else {
       console.log(`'${gameAnswers[0]}' is wrong answer ;(. Correct answer was '${gameAnswers[1]}'.
       Let's try again, ${userNameThis}!`);
     }
   };
-  gameEngine();
+  gameResultsСompare();
 };
 
 export {
