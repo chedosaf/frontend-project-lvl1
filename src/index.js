@@ -26,7 +26,7 @@ const engine = (question, flowFunction) => {
       return;
     }
     const gameAnswers = flowFunction();
-    if (gameAnswers[0] === gameAnswers[1]) {
+    if (String(gameAnswers[0]) === String(gameAnswers[1])) {
       console.log('Correct!');
       acc += 1;
       gameEngine();
