@@ -1,11 +1,9 @@
-import readlineSync from 'readline-sync';
-
 import {
-  maxRandomNumder, engine, randomizer,
+  maxRandomNumder, launchGame, randomizer,
 } from '../index.js';
 
 const isPrime = () => {
-  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const primeFlow = () => {
     const randomInt = randomizer(1, maxRandomNumder);
     let trueAnswer = 'yes';
@@ -14,11 +12,10 @@ const isPrime = () => {
         trueAnswer = 'no';
       }
     }
-    console.log(`Question: ${randomInt}`);
-    const answer = readlineSync.question('Your answer: ');
-    return [answer, trueAnswer];
+    const question = `Question: ${randomInt}`;
+    return [trueAnswer, question];
   };
-  engine(question, primeFlow);
+  launchGame(task, primeFlow);
 };
 
 export default isPrime;

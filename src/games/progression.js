@@ -1,11 +1,9 @@
-import readlineSync from 'readline-sync';
-
 import {
-  maxRandomNumder, engine, randomizer,
+  maxRandomNumder, launchGame, randomizer,
 } from '../index.js';
 
 const progression = () => {
-  const question = 'What number is missing in the progression?';
+  const task = 'What number is missing in the progression?';
   const progressionFlow = () => {
     const mass = [];
     const massLength = randomizer(5, 11);
@@ -18,11 +16,10 @@ const progression = () => {
     }
     const trueAnswer = mass[randomMassItem];
     mass[randomMassItem] = '..';
-    console.log(`Question: ${mass}`);
-    const answer = readlineSync.question('Your answer: ');
-    return [answer, trueAnswer];
+    const question = `Question: ${mass}`;
+    return [trueAnswer, question];
   };
-  engine(question, progressionFlow);
+  launchGame(task, progressionFlow);
 };
 
 export default progression;
