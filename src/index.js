@@ -17,15 +17,15 @@ const launchGame = (task, flowFunction) => {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
-    const questionAndAnswer = flowFunction();
-    console.log(questionAndAnswer[1]);
+    const [trueAnswer, question] = flowFunction();
+    console.log(question);
     const answer = readlineSync.question('Your answer: ');
-    if (String(questionAndAnswer[0]) === String(answer)) {
+    if (String(trueAnswer) === String(answer)) {
       console.log('Correct!');
       acc += 1;
       gameResultsСompare();
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${questionAndAnswer[0]}'.
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
       Let's try again, ${userName}!`);
     }
   };
