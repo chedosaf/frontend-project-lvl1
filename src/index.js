@@ -8,16 +8,16 @@ const randomizer = (min, max) => Math.floor(Math.random() * (Math.floor(max)
   - Math.ceil(min))) + Math.ceil(min);
 
 const launchGame = (task, flowFunction) => {
-  let acc = 0;
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${userName}!`);
   console.log(task);
+  let acc = 0;
   const gameResultsСompare = () => {
-    const questionAndAnswer = flowFunction();
     if (acc > rigthAnswerCount - 1) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
+    const questionAndAnswer = flowFunction();
     console.log(questionAndAnswer[1]);
     const answer = readlineSync.question('Your answer: ');
     if (String(questionAndAnswer[0]) === String(answer)) {
