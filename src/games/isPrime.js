@@ -1,11 +1,13 @@
 import {
-  maxRandomNumder, launchGame, randomizer,
+  maxRandomNumder, launchGame,
 } from '../index.js';
 
+import { generateRandomNumber } from '../commonGameFunctions.js';
+
 const isPrime = () => {
-  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const primeFlow = () => {
-    const randomInt = randomizer(1, maxRandomNumder);
+  const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  const getRound = () => {
+    const randomInt = generateRandomNumber(1, maxRandomNumder);
     let trueAnswer = 'yes';
     for (let i = 2; i <= randomInt - 1; i += 1) {
       if (randomInt % i === 0) {
@@ -15,7 +17,7 @@ const isPrime = () => {
     const question = `Question: ${randomInt}`;
     return [trueAnswer, question];
   };
-  launchGame(task, primeFlow);
+  launchGame(gameDescription, getRound);
 };
 
 export default isPrime;

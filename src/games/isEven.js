@@ -1,16 +1,18 @@
 import {
-  maxRandomNumder, launchGame, randomizer,
+  maxRandomNumder, launchGame,
 } from '../index.js';
 
+import { generateRandomNumber } from '../commonGameFunctions.js';
+
 const isEven = () => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const evenFlow = () => {
-    const randomInt = randomizer(1, maxRandomNumder);
+  const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const getRound = () => {
+    const randomInt = generateRandomNumber(1, maxRandomNumder);
     const question = `Question: ${randomInt}`;
     const trueAnswer = randomInt % 2 ? 'no' : 'yes';
     return [trueAnswer, question];
   };
-  launchGame(task, evenFlow);
+  launchGame(gameDescription, getRound);
 };
 
 export default isEven;

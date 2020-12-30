@@ -1,15 +1,17 @@
 import {
-  maxRandomNumder, launchGame, randomizer,
+  maxRandomNumder, launchGame,
 } from '../index.js';
 
+import { generateRandomNumber } from '../commonGameFunctions.js';
+
 const progression = () => {
-  const task = 'What number is missing in the progression?';
-  const progressionFlow = () => {
+  const gameDescription = 'What number is missing in the progression?';
+  const getRound = () => {
     const mass = [];
-    const massLength = randomizer(5, 11);
-    let randomNumber = randomizer(0, maxRandomNumder);
-    const randomIncrease = randomizer(0, 30);
-    const randomMassItem = randomizer(0, massLength);
+    const massLength = generateRandomNumber(5, 11);
+    let randomNumber = generateRandomNumber(0, maxRandomNumder);
+    const randomIncrease = generateRandomNumber(0, 30);
+    const randomMassItem = generateRandomNumber(0, massLength);
     for (let i = 0; mass.length < massLength; i += 1) {
       randomNumber += randomIncrease;
       mass.push(randomNumber);
@@ -19,7 +21,7 @@ const progression = () => {
     const question = `Question: ${mass}`;
     return [trueAnswer, question];
   };
-  launchGame(task, progressionFlow);
+  launchGame(gameDescription, getRound);
 };
 
 export default progression;
