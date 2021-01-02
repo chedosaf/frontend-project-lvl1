@@ -2,7 +2,7 @@ import {
   maxRandomNumder, launchGame,
 } from '../index.js';
 
-import { generateRandomNumber } from '../commonGameFunctions.js';
+import generateRandomNumber from '../helpers.js';
 
 const progression = () => {
   const gameDescription = 'What number is missing in the progression?';
@@ -18,7 +18,7 @@ const progression = () => {
     }
     const trueAnswer = mass[randomMassItem];
     mass[randomMassItem] = '..';
-    const question = `Question: ${mass}`;
+    const question = `Question: ${mass.join()}`;
     return [trueAnswer, question];
   };
   launchGame(gameDescription, getRound);

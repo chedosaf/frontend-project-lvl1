@@ -2,7 +2,7 @@ import {
   maxRandomNumder, launchGame,
 } from '../index.js';
 
-import { generateRandomNumber } from '../commonGameFunctions.js';
+import generateRandomNumber from '../helpers.js';
 
 const isPrime = () => {
   const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
