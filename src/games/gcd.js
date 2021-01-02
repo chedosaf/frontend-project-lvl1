@@ -4,7 +4,7 @@ import {
 
 import generateRandomNumber from '../helpers.js';
 
-const gcd = () => {
+export default () => {
   const gameDescription = 'Find the greatest common divisor of given numbers.';
   const nod = (a, b) => {
     if (b > a) return nod(b, a);
@@ -20,5 +20,3 @@ const gcd = () => {
   };
   launchGame(gameDescription, getRound);
 };
-
-export default gcd;

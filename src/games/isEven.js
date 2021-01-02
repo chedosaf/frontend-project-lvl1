@@ -4,7 +4,7 @@ import {
 
 import generateRandomNumber from '../helpers.js';
 
-const isEven = () => {
+export default () => {
   const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
   const getRound = () => {
     const randomInt = generateRandomNumber(1, maxRandomNumder);
@@ -14,5 +14,3 @@ const isEven = () => {
   };
   launchGame(gameDescription, getRound);
 };
-
-export default isEven;

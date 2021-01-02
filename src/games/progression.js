@@ -4,7 +4,7 @@ import {
 
 import generateRandomNumber from '../helpers.js';
 
-const progression = () => {
+export default () => {
   const gameDescription = 'What number is missing in the progression?';
   const getRound = () => {
     const mass = [];
@@ -18,11 +18,9 @@ const progression = () => {
     }
     const trueAnswer = mass[randomMassItem];
     mass[randomMassItem] = '..';
-    const mass1 = mass.toString();
-    const question = `Question: ${mass1}`;
+    const mass1 = `Question: ${mass}`;
+    const question = mass1.toString();
     return [trueAnswer, question];
   };
   launchGame(gameDescription, getRound);
 };
-
-export default progression;

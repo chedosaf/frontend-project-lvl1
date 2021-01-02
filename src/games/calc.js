@@ -4,7 +4,7 @@ import {
 
 import generateRandomNumber from '../helpers.js';
 
-const calc = () => {
+export default () => {
   const gameDescription = 'What is the result of the expression?';
   const getRound = () => {
     const optionsForOperations = ['-', '+', '*'];
@@ -22,5 +22,3 @@ const calc = () => {
   };
   launchGame(gameDescription, getRound);
 };
-
-export default calc;
