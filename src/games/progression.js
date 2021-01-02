@@ -18,7 +18,7 @@ const progression = () => {
     }
     const trueAnswer = mass[randomMassItem];
     mass[randomMassItem] = '..';
-    const question = `Question: ${mass.join()}`;
+    const question = `Question: ${mass.toString()}`;
     return [trueAnswer, question];
   };
   launchGame(gameDescription, getRound);
