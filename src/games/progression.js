@@ -8,7 +8,7 @@ const progression = () => {
   const gameDescription = 'What number is missing in the progression?';
   const getRound = () => {
     const mass = [];
-    const massLength = 5;
+    const massLength = generateRandomNumber(6, 11);
     let randomNumber = generateRandomNumber(0, maxRandomNumder);
     const randomIncrease = generateRandomNumber(0, 30);
     const randomMassItem = generateRandomNumber(0, massLength);
