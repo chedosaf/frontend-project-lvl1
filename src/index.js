@@ -4,7 +4,7 @@ const roundsToWin = 3;
 
 const maxRandomNumder = 100;
 
-const launchGame = (gameDescription, flowFunction) => {
+const launchGame = (gameDescription, getRound) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${userName}!`);
   console.log(gameDescription);
@@ -14,7 +14,7 @@ const launchGame = (gameDescription, flowFunction) => {
       return;
     }
     const nextRemainingRounds = remainingRounds - 1;
-    const [trueAnswer, question] = flowFunction();
+    const [trueAnswer, question] = getRound();
     console.log(question);
     const answer = readlineSync.question('Your answer: ');
     if (String(trueAnswer) === String(answer)) {
