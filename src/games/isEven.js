@@ -9,7 +9,8 @@ export default () => {
   const getRound = () => {
     const randomInt = generateRandomNumber(1, maxRandomNumder);
     const question = `Question: ${randomInt}`;
-    const trueAnswer = randomInt % 2 ? 'no' : 'yes';
+    const isEven = (number) => number % 2 === 0;
+    const trueAnswer = isEven(randomInt) ? 'yes' : 'no';
     return [trueAnswer, question];
   };
   launchGame(gameDescription, getRound);

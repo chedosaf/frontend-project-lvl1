@@ -18,8 +18,8 @@ export default () => {
     }
     const trueAnswer = mass[randomMassItem];
     mass[randomMassItem] = '..';
-    const mass1 = mass.join(' ');
-    const question = `Question: ${mass1}`;
+    const finishedMass = mass.join(' ');
+    const question = `Question: ${finishedMass}`;
     return [trueAnswer, question];
   };
   launchGame(gameDescription, getRound);
