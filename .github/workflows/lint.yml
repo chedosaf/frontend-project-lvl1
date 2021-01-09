@@ -28,7 +28,6 @@ jobs:
           node-version: '12'
           check-latest: true
       - run: npm install
-      - run: npm test
       
       - uses: actions/checkout@v2
       - name: Install lint
