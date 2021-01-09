@@ -14,10 +14,11 @@ const launchGame = (gameDescription, getRound) => {
       return;
     }
     const nextRemainingRounds = remainingRounds - 1;
-    const [trueAnswer, question] = getRound();
+    const [trueAnswer, questionCondition] = getRound();
+    const question = `Question: ${questionCondition}`;
     console.log(question);
     const answer = readlineSync.question('Your answer: ');
-    if (String(trueAnswer) === String(answer)) {
+    if (trueAnswer === answer) {
       console.log('Correct!');
       startGameRound(nextRemainingRounds);
     } else {
