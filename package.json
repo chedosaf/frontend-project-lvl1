@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/chedosaf/frontend-project-lvl1#readme",
   "dependencies": {
-    "eslint-config-airbnb-base": "^14.2.1",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
     "eslint-config-base": "^1.0.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-config-airbnb-base": "^14.2.1"
   }
 }
