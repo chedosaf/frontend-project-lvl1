@@ -12,9 +12,9 @@ const nod = (a, b) => {
 const getRound = () => {
   const number1 = generateRandomNumber(0, maxRandomNumder);
   const number2 = generateRandomNumber(0, maxRandomNumder);
-  const questionCondition = `${number1} ${number2}`;
-  const trueAnswer = nod(number1, number2).toString();
-  return [trueAnswer, questionCondition];
+  const question = `${number1} ${number2}`;
+  const answer = nod(number1, number2).toString();
+  return [answer, question];
 };
 
 const gameDescription = 'Find the greatest common divisor of given numbers.';

@@ -6,33 +6,26 @@ import generateRandomNumber from '../helpers.js';
 
 const gameDescription = 'What number is missing in the progression?';
 
-const massLength = generateRandomNumber(6, 11);
-
-const generateIncrease = () => generateRandomNumber(0, 30);
-
-const generateFirstProgressionMember = () => generateRandomNumber(0, maxRandomNumder);
-
-const generateProgressionItem = () => generateRandomNumber(0, massLength);
-
-const generateProgression = () => {
+const generateProgression = (length, incr, firstMember) => {
   const progression = [];
-  const increase = generateIncrease();
-  let firstProgressionMember = generateFirstProgressionMember();
-  for (let i = 0; progression.length < massLength; i += 1) {
-    firstProgressionMember += increase;
-    progression.push(firstProgressionMember);
+  let progressionMember = firstMember;
+  for (let i = 0; progression.length < length; i += 1) {
+    progressionMember += incr;
+    progression.push(progressionMember);
   }
   return progression;
 };
 
 const getRound = () => {
-  const progressionItem = generateProgressionItem();
-  const progression = generateProgression();
-  const trueAnswer = String(progression[progressionItem]);
-  progression[progressionItem] = '..';
-  const finishedMass = progression.join(' ');
-  const questionCondition = `${finishedMass}`;
-  return [trueAnswer, questionCondition];
+  const increase = generateRandomNumber(0, 30);
+  const progressionLength = generateRandomNumber(6, 11);
+  const firstProgressionMember = generateRandomNumber(0, maxRandomNumder);
+  const progressionItemToHide = generateRandomNumber(0, progressionLength);
+  const progression = generateProgression(progressionLength, increase, firstProgressionMember);
+  const answer = String(progression[progressionItemToHide]);
+  progression[progressionItemToHide] = '..';
+  const question = progression.join(' ');
+  return [answer, question];
 };
 
 export default () => {

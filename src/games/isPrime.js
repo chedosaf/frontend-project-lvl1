@@ -18,10 +18,9 @@ const isPrime = (num) => {
 };
 
 const getRound = () => {
-  const number = generateRandomNumber(1, maxRandomNumder);
-  const trueAnswer = isPrime(number) ? 'yes' : 'no';
-  const questionCondition = `${number}`;
-  return [trueAnswer, questionCondition];
+  const question = generateRandomNumber(1, maxRandomNumder);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [answer, question];
 };
 
 export default () => {

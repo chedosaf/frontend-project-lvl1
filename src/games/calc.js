@@ -9,16 +9,17 @@ const gameDescription = 'What is the result of the expression?';
 const getRound = () => {
   const number1 = generateRandomNumber(0, maxRandomNumder);
   const number2 = generateRandomNumber(0, maxRandomNumder);
-  const operation = {
+  const operationsInstructions = {
     '-': (a, b) => a - b,
     '+': (a, b) => a + b,
     '*': (a, b) => a * b,
   };
-  const mathOperation = Object.keys(operation)[generateRandomNumber(0,
-    Object.keys(operation).length)];
-  const questionCondition = `${number1} ${mathOperation} ${number2}`;
-  const trueAnswer = String(operation[mathOperation](number1, number2));
-  return [trueAnswer, questionCondition];
+  const operations = Object.keys(operationsInstructions);
+  const position = generateRandomNumber(0, operations.length);
+  const operation = operations[position];
+  const question = `${number1} ${operation} ${number2}`;
+  const answer = String(operationsInstructions[operation](number1, number2));
+  return [answer, question];
 };
 
 export default () => {

@@ -14,15 +14,14 @@ const launchGame = (gameDescription, getRound) => {
       return;
     }
     const nextRemainingRounds = remainingRounds - 1;
-    const [trueAnswer, questionCondition] = getRound();
-    const question = `Question: ${questionCondition}`;
-    console.log(question);
-    const answer = readlineSync.question('Your answer: ');
-    if (trueAnswer === answer) {
+    const [answer, question] = getRound();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (answer === userAnswer) {
       console.log('Correct!');
       startGameRound(nextRemainingRounds);
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.
       Let's try again, ${userName}!`);
     }
   };
